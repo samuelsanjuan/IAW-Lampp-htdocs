@@ -1,0 +1,5 @@
+O nome de usuario é: samuel
+O primero apelido do usuario é:sanjuan
+O segundo apelido do usuario é:andres
+O contrasinal do usuario é:castelao
+O usuario desexa recibir información
