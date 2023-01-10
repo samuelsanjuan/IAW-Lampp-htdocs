@@ -1,45 +1,9 @@
-Exercicios PHP-MySQL
-
-Crea unha base de dato que se chame Inmobiliaria. Crea nela unha táboa que se chame Vivendas cos seguintes campos:
-Tipo (por exemplo Casa, Piso, Adosado, Chalet...)
-Zona (por exemplo Centro, As Travesas, Calvario...)
-Dormitorios (2, 3, 4..)
-Precio
-Tamaño (95, 105, 80 m2)
-Extras (Garaxe, Piscina, Xardín...)
-
-
-
-
-
-Crea un programa por apartado:
- Mostra por pantalla o listado de vivendas dispoñibles
- Inserta unha nova vivenda
- Elimina unha vivenda
- Mostra por pantalla as vivendas que teñen Xardin, para elo ten ao menos 3 con esas
-características na táboa
- Coloca un combo nun html, onde se poda elexir "Piso", "Casa", "Chalet", etc...e ao
-elixir, que mostre por pantalla os elementos da táboa que cumplen esa función
-<SELECT NAME=“color">
-<OPTION VALUE=“rojo" SELECTED>Rojo
-<OPTION VALUE=“verde">Verde
-<OPTION VALUE=“azul">Azul
-</SELECT>
-<?PHP
-$color
-= $_REQUEST*‘color’+;
-echo ($color);
-?>
-Ou ben:
-<SELECT MULTIPLE SIZE="3" NAME="idiomas[]">
-<OPTION VALUE="ingles" SELECTED>Inglés
-<OPTION VALUE="frances">Francés
-<OPTION VALUE="aleman">Alemán
-<OPTION VALUE="holandes">Holandés
-</SELECT>
-<?PHP
-$idiomas
-= $_REQUEST*‘idiomas’+;
-foreach ($idiomas as $idioma)
-print (“$idioma<BR>\n”);
-?>
+Ca base de datos anterior:
+ Investiga como se sube un arquivo PHP, a través dun formulario HTML
+ Crea un arquivo que conteña tres vivendas, , sube o arquivo, logo ábreo e inserta as
+tres vivendas na BBDD (escolle ti o formato no que vas a gardar os datos no arquivo de
+cada vivenda, para poder lelas adecuadamente do arquivo),
+ E se en lugar de subir un arquivo, subimos unha foto da vivenda e gardamos nunha
+nova columna da táboa unha referencia a esa foto? Con isto poderíamos facer en html
+un combo que nos permita seleccionar vivenda (ollo) e sacar os datos desa vivenda ca
+súa foto correspondente.
