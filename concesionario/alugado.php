@@ -81,7 +81,7 @@ if ($num==0){
 }else{
     echo "wtf hermano";
 }
-
+ 
 echo $modelo."<br/>".$foto."<br/>";
 echo "gracias $user por haber alquilado el coche <br/>";
 echo '<a href="menu.php">Volver</a>';

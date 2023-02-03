@@ -50,5 +50,11 @@ session_start();
 
         <br/><br/>
 
+		<form name="devolver coche" method="post" action="devolucion.php">
+			<input type="submit" value="Devolver coche" />
+		</form>
+
+        <br/><br/>
+
 	</body>
 </html>
