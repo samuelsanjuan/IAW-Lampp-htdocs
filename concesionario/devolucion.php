@@ -1,7 +1,30 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Borrado Venda</title>
+
+</head>
+
+<body>
+
+    <p style="color:blue;text-align:right;">
+        <?php
+        header("Content-Type: text/html;charset=utf-8");
+        session_start();
+        echo "Bienvenido " .
+            $_SESSION['usuario'];
+        ?>
+    </p>
+</body>
+
+</html>
 <?php
+header("Content-Type: text/html;charset=utf-8");
 session_start();
 $user=$_SESSION['usuario'];
 $mysqli_link = mysqli_connect("localhost","root","", "frota");
+mysqli_set_charset($mysqli_link, "utf8");
 
 
 if (mysqli_connect_errno()){

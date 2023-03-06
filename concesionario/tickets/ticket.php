@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: text/html;charset=utf-8");
 session_start();
 $user=$_SESSION['usuario'];
 $date=date("d-m-y_G:i:s");
@@ -7,6 +8,7 @@ $nombreArchivo=$user."_".$date.".txt";
 
 
 $mysqli_link = mysqli_connect("localhost","root","", "frota");
+mysqli_set_charset($mysqli_link, "utf8");
 
 if (mysqli_connect_errno()){
     printf("MySQL connection failed with the error: %s",mysqli_connect_error());
@@ -67,8 +69,4 @@ echo "$nombreArchivo generado<br><br>";
 
 echo '<a href="'.$nombreArchivo.'" target="_blank">Ver ticket</a>';
 echo '<a href="../menu.php">Volver</a>';
-
-
-
-
 ?>

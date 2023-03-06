@@ -2,7 +2,7 @@
 
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Vehiculos en alquiler</title>
+    <title>Borrado Venda</title>
 
 </head>
 
@@ -30,22 +30,26 @@ if (mysqli_connect_errno()){
     exit; 
 }
 
-$select_query = "SELECT * FROM vehiculo_aluguer";
-
+echo '<form name="DevolverVehiculos" method="post" action="vehiculosPasados.php">';
+$select_query = "SELECT * FROM `vehiculo_devolto`";
 $result = mysqli_query($mysqli_link, $select_query);
 
-while ($fila = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-    echo "Modelo:" . $fila['modelo'] . "<br/>";
-    echo "Cantidade:" . $fila['cantidade'] . "<br/>";
-    echo "Descricion:" . $fila['descricion'] . "<br/>";
-    echo "Marca:" . $fila['marca'] . "<br/>";
-    echo "Prezo:" . $fila['prezo'] . "<br/>";
-    echo $fila['foto'] . "<br/>";
-    echo "<br/>";    
+while ($fila = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+
+    $modelo=$fila['modelo'];
+    $descricion=$fila['descricion'];
+    $cantidade=$fila['cantidade'];
+    $marca=$fila['marca'];
+    $foto=$fila['foto'];  
+    echo $modelo."</br>".$descricion."</br>".$cantidade."</br>".$marca."</br>".$foto."<br><br>";
+
 }
 
+echo "<br/>";
 mysqli_close($mysqli_link);
+echo ' <input type="submit" value="Aceptar vehiculos devueltos" />
+</form>';
 
-echo '<a href="menu.php">Volver</a>';
+echo "<a href='menu.php'>volver al menu</a>";
+
 ?>
-

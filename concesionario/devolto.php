@@ -1,10 +1,33 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Vehiculo devolto</title>
+
+</head>
+
+<body>
+
+    <p style="color:blue;text-align:right;">
+        <?php
+        header("Content-Type: text/html;charset=utf-8");
+        session_start();
+        echo "Bienvenido " .
+            $_SESSION['usuario'];
+        ?>
+    </p>
+</body>
+
+</html>
 <?php
+header("Content-Type: text/html;charset=utf-8");
 session_start();
 $user=$_SESSION['usuario'];
 
 $cocheDevolto=$_REQUEST['radio'];
 
 $mysqli_link = mysqli_connect("localhost","root","", "frota");
+mysqli_set_charset($mysqli_link, "utf8");
 
 if (mysqli_connect_errno()){
     printf("MySQL connection failed with the error: %s",mysqli_connect_error());
@@ -54,15 +77,10 @@ if ($cantidad<1){
 
 
 
-$select_query= "SELECT count(*) FROM vehiculo_devolto where modelo='$modelo' and descricion='$descr' and marca='$marca' and foto = '$foto' and usuario = '$user'";
+$select_query= "SELECT * FROM vehiculo_devolto where modelo='$modelo' and descricion='$descr' and marca='$marca' and foto = '$foto' and usuario = '$user'";
 $result = mysqli_query($mysqli_link, $select_query);
-echo "guayaba";
-while ($fila = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+$num=$result->num_rows;
 
-   $num=$fila['count(*)'];
-
-}
-echo "$num";
 
 if ($num==0){
 
