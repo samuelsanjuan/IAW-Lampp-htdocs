@@ -69,13 +69,13 @@ if ($error == 0) {
 
     $result = mysqli_query($mysqli_link, $select_query);
 
-    $num=$result->num_rows;
+    $num = $result->num_rows;
 
 
     if ($num != 1) {
         echo "no existe ese modelo";
         echo '<br><a href="modificarVehiculoAluguer.php">try again</a>';
-        $error=1;
+        $error = 1;
     } else {
 
         $select_query = "SELECT * FROM `vehiculo_aluguer` WHERE modelo = '$modelo'";

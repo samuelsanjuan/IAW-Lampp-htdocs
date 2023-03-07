@@ -22,12 +22,12 @@
 <?php
 header("Content-Type: text/html;charset=utf-8");
 
-$mysqli_link = mysqli_connect("localhost","root","", "frota");
+$mysqli_link = mysqli_connect("localhost", "root", "", "frota");
 mysqli_set_charset($mysqli_link, "utf8");
 
-if (mysqli_connect_errno()){
-    printf("MySQL connection failed with the error: %s",mysqli_connect_error());
-    exit; 
+if (mysqli_connect_errno()) {
+    printf("MySQL connection failed with the error: %s", mysqli_connect_error());
+    exit;
 }
 
 $select_query = "SELECT * FROM vehiculo_aluguer";
@@ -41,11 +41,10 @@ while ($fila = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     echo "Marca:" . $fila['marca'] . "<br/>";
     echo "Prezo:" . $fila['prezo'] . "<br/>";
     echo $fila['foto'] . "<br/>";
-    echo "<br/>";    
+    echo "<br/>";
 }
 
 mysqli_close($mysqli_link);
 
 echo '<a href="menu.php">Volver</a>';
 ?>
-

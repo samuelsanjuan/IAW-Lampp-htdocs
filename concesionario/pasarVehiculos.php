@@ -2,7 +2,7 @@
 
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Borrado Venda</title>
+    <title>pasar vehiculos en devolucion</title>
 
 </head>
 

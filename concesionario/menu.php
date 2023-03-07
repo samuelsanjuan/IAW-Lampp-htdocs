@@ -7,23 +7,23 @@ session_start();
 <html>
 
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>Menu</title>
-	
+
 </head>
 
 <body>
 
 	<p style="color:blue;text-align:right;">
 		<?php
-header("Content-Type: text/html;charset=utf-8");
+		header("Content-Type: text/html;charset=utf-8");
 		echo "Bienvenido " .	$_SESSION['usuario'];
 		?>
 	</p>
 
 	<p>
 		<?php
-header("Content-Type: text/html;charset=utf-8");
+		header("Content-Type: text/html;charset=utf-8");
 		if ($_SESSION['permisos'] == 1) {
 			header("Location: menuAdmins.php");
 		}

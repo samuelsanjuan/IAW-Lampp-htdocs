@@ -2,7 +2,7 @@
 
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Borrado Venda</title>
+    <title>Devolver vehiculos</title>
 
 </head>
 
@@ -22,14 +22,14 @@
 <?php
 header("Content-Type: text/html;charset=utf-8");
 session_start();
-$user=$_SESSION['usuario'];
-$mysqli_link = mysqli_connect("localhost","root","", "frota");
+$user = $_SESSION['usuario'];
+$mysqli_link = mysqli_connect("localhost", "root", "", "frota");
 mysqli_set_charset($mysqli_link, "utf8");
 
 
-if (mysqli_connect_errno()){
-    printf("MySQL connection failed with the error: %s",mysqli_connect_error());
-    exit; 
+if (mysqli_connect_errno()) {
+    printf("MySQL connection failed with the error: %s", mysqli_connect_error());
+    exit;
 }
 
 $select_query = "SELECT * FROM vehiculo_alugado where usuario='$user'";
@@ -45,8 +45,8 @@ while ($fila = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     echo "Descricion:" . $fila['descricion'] . "<br/>";
     echo "Marca:" . $fila['marca'] . "<br/>";
     echo $fila['foto'] . "<br/>";
-    $modelo=$fila['modelo'];
-    echo "<input type='radio' name='radio' value='".$modelo."' /> Devolver ".$fila['modelo']."</br>";  
+    $modelo = $fila['modelo'];
+    echo "<input type='radio' name='radio' value='" . $modelo . "' /> Devolver " . $fila['modelo'] . "</br>";
     echo "<br/>";
 }
 echo ' <input type="submit" value="devolver" />
@@ -55,6 +55,4 @@ echo ' <input type="submit" value="devolver" />
 mysqli_close($mysqli_link);
 
 echo '<a href="menu.php">Volver</a>';
-
-
 ?>
