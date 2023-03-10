@@ -44,6 +44,8 @@ if (mysqli_connect_errno()) {
 }
 
 echo '<form name="aceptarRegistros" method="post" action="registrosAceptados.php">';
+
+//muestra los nuevos usuarios
 $select_query = "SELECT * FROM `novo_rexistro`";
 $result = mysqli_query($mysqli_link, $select_query);
 

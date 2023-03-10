@@ -2,9 +2,10 @@
 header("Content-Type: text/html;charset=utf-8");
 session_start();
 $user = $_SESSION['usuario'];
+
+//para generar el nombre del ticket usaremos el nombre de usuario la fecha y la hora
 $date = date("d-m-y_G:i:s");
 $nombreArchivo = $user . "_" . $date . ".txt";
-
 
 
 $mysqli_link = mysqli_connect("localhost", "root", "", "frota");
@@ -55,6 +56,7 @@ if (mysqli_query($mysqli_link, $update_query)) {
 
 mysqli_close($mysqli_link);
 
+//este es el texto que se genera en el ticket
 $cadena = "gracias $name por haber comprado el vehiculo $modelo
 a continuacion le adjuntamos los detalles de su compra\n
 $name con dni $dni direccion $direccion telefono $tel y email $email

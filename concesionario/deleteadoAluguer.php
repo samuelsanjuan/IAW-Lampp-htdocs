@@ -39,21 +39,23 @@ $num = $result->num_rows;
 
 
 if ($num == 1) {
-
+    //si existe comprueba si se queda en negativo o no
     $select_query = "SELECT cantidade from vehiculo_aluguer where modelo = '$modelo'";
     $result = mysqli_query($mysqli_link, $select_query);
 
     while ($fila = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
         $cantidad = $fila['cantidade'] - $cantidad;
-        echo "$cantidad";
     }
-
+    //si se queda en positivo le resta la cantidad
     if ($cantidad > 0) {
 
         $update_query = "UPDATE `vehiculo_aluguer` SET cantidade='$cantidad' WHERE modelo='$modelo'";
         mysqli_query($mysqli_link, $update_query);
         echo "modificada la cantidad";
+     
+    
+        //si se queda en negativo lo borra
     } elseif ($cantidad <= 0) {
 
         $delete_query = "DELETE FROM `vehiculo_aluguer` WHERE modelo = '$modelo'";

@@ -36,7 +36,7 @@ mysqli_set_charset($mysqli_link, "utf8");
             while ($fila = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
                 if ($fila['tipo_usuario']=='a'){
-
+                    echo $fila['tipo_usuario'];
                     $_SESSION['usuario']=$_REQUEST['user'];
                     $_SESSION['permisos']=1;
                     header("Location: menu.php");

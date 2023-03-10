@@ -32,10 +32,10 @@ if (mysqli_connect_errno()) {
     exit;
 }
 
+//solo te muestra los vehiculos que tengan stock, sino obviamente no lo puedes comprar
 $select_query = "SELECT * FROM vehiculo_venda where cantidade>0";
 
 $result = mysqli_query($mysqli_link, $select_query);
-
 
 echo '<form name="comprar" method="post" action="tickets/ticket.php">';
 
@@ -57,7 +57,5 @@ echo ' <input type="submit" value="comprar" />
 mysqli_close($mysqli_link);
 
 echo '<a href="menu.php">Volver</a>';
-
-$date("d-m-y G:i:s");
 
 ?>

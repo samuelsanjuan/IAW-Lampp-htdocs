@@ -28,11 +28,12 @@ if (mysqli_connect_errno()) {
     printf("MySQL connection failed with the error: %s", mysqli_connect_error());
     exit;
 }
+
+//solo te muestra los vehiculos que tengan stock, sino obviamente no lo puedes alquilar
 $select_query = "SELECT * FROM vehiculo_aluguer where cantidade>0";
 $result = mysqli_query($mysqli_link, $select_query);
 
 echo '<form name="register" method="post" action="alugado.php">';
-
 
 while ($fila = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     echo "Modelo:" . $fila['modelo'] . "<br/>";
